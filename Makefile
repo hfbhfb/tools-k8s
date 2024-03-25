@@ -10,7 +10,7 @@ hostnetwork:
 
 
 docker:
-	docker build -t docker.io/hefabao/tools-k8s:v0.1 .
+	docker build -t docker.io/hefabao/tools-k8s:v0.2 .
 
 
 

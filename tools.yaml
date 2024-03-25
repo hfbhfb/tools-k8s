@@ -2,23 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: port80-helloworld
-  name: port80-helloworld
+    app: tools
+  name: tools
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: port80-helloworld
+      app: tools
   template:
     metadata:
       labels:
-        app: port80-helloworld
+        app: tools
     spec:
       containers:
-      - name: port80-helloworld
+      - name: tools
         #image: nginx:1.25-bullseye-perl #这个镜像有ps命令
         #image: centos:7.6.1810
-        image: docker.io/hefabao/tools-k8s:v0.1
+        image: docker.io/hefabao/tools-k8s:v0.2
         imagePullPolicy: IfNotPresent
         # command: ["sh","-c",'which sleep; sleep 99998; sleep 779;']
         command: ["sh","-c",'nginx -g "daemon off;"']
